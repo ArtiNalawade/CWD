@@ -1,0 +1,72 @@
+package Assignment;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class ListBox {
+	
+public static void main(String[]args) throws InterruptedException {
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\DDR\\Desktop\\Velocity\\Chromedriver2\\chromedriver.exe");
+		
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://demo.automationtesting.in/Register.html");
+		
+		Thread.sleep(4000);
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.xpath("//input[@type=\"text\"]")).sendKeys("Arti");
+		driver.findElement(By.xpath("//input[@class=\"form-control ng-pristine ng-untouched ng-invalid ng-invalid-required\"]")).sendKeys("Nalawade");
+	driver.findElement(By.xpath("//textarea[@rows=\"3\"]")).sendKeys("Hadapsar Pune");
+	driver.findElement(By.xpath("//input[@type=\"email\"]")).sendKeys("arti@gmail.com");
+		driver.findElement(By.xpath("//input[@type=\"tel\"]")).sendKeys("8975479872");
+		driver.findElement(By.xpath("//input[@value=\"FeMale\"]")).click();
+		driver.findElement(By.xpath("//input[@value=\"Movies\"]")).click();
+		//driver.findElement(By.xpath("//div[@id=\"msdd\"]")).sendKeys("English");
+		driver.findElement(By.xpath("//input[@type=\"password\"]")).sendKeys("1234"); 
+		driver.findElement(By.xpath("//input[@id=\"secondpassword\"]")).sendKeys("1234");
+		
+		WebElement API = driver.findElement(By.id("Skills"));
+		
+		Select S1 = new Select(API);
+		S1.selectByValue("APIs");
+		
+		Thread.sleep(3000);
+		
+		
+		WebElement Year = driver.findElement(By.xpath("//select[@id=\"yearbox\"]"));
+		
+		Select s2 = new Select(Year);
+		s2.selectByValue("1923");
+		
+		WebElement Month = driver.findElement(By.xpath("//select[@placeholder=\"Month\"]"));
+		Select S3 = new Select(Month);
+		S3.selectByValue("June");
+		
+		WebElement Day = driver.findElement(By.xpath("//select[@id=\"daybox\"]"));
+		
+		Select S4 = new Select(Day);
+		S4.selectByValue("8");
+		
+		Thread.sleep(3000);
+		
+
+	
+		
+		
+	
+		
+		
+		
+		
+		
+		
+	}
+
+	
+
+	
+
+}
